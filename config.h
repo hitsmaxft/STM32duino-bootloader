@@ -34,6 +34,7 @@
 #define __CONFIG_H
 
 #include "common.h"
+#include <stdint.h>
 
 
 
@@ -97,7 +98,7 @@
     #define HAS_MAPLE_HARDWARE 1
 
     #define LED_BANK         GPIOB
-    #define LED_PIN          1
+    #define LED_PIN          0
     #define LED_ON_STATE     1
 
     /* On the Mini, BUT is PB8 */
@@ -159,7 +160,7 @@
     #define BUTTON_BANK GPIOB
     #define BUTTON_PIN 2
     #define BUTTON_PRESSED_STATE 1
-	
+
 #elif defined TARGET_GENERIC_F103_PC13_FASTBOOT
 
 
@@ -284,10 +285,20 @@
 
 #elif defined TARGET_GENERIC_F103_PB0
 
-    #define LED_BANK            GPIOB
-    #define LED_PIN         0
-    #define LED_ON_STATE        1
+    #define LED_BANK		GPIOB
+    #define LED_PIN			0
+    #define LED_ON_STATE	1
     #define BOOTLOADER_WAIT 30
+
+#elif defined TARGET_YEHUO_F103_ZNZ
+
+    #define LED_BANK        GPIOB
+    #define LED_PIN         0
+    #define LED_ON_STATE    0
+    #define BOOTLOADER_WAIT 3
+    #define USB_EN_BANK     GPIOD
+    #define USB_EN_PIN      6
+    #define USB_EN_ON_STATE 0
 
 #elif defined TARGET_STBEE
 
@@ -411,7 +422,7 @@
     #error "No config for this target"
 #endif
 
-// Check if button pulldown should be enabled 
+// Check if button pulldown should be enabled
 // Default to True as this was the default prior to needing to disable it
 // in order to use the boot1 pin on the Blue Pill which has a very week pullup
 #ifndef BUTTON_INPUT_MODE

@@ -39,9 +39,11 @@
 #define ENDP3_RXADDR    0x110
 
 #define bMaxPacketSize  0x40    /* 64B,  maximum for usb FS devices */
-//#define wTransferSize   FLASH_PAGE_SIZE  /* This is important, because transfers have to match with the flash page size, otherwise it erases a page before its finished copying to that page */
+
+//#define wTransferSize   ((uint16_t)0x800)
+/* This is important, because transfers have to match with the flash page size, otherwise it erases a page before its finished copying to that page */
 #define dummyTransferSize 0x800
-int wTransferSize;
+extern u16 wTransferSize;
 
 #define NUM_ENDPTS      0x01
 
@@ -79,6 +81,9 @@ typedef enum _DEVICE_STATE {
 } DEVICE_STATE;
 
 void setupUSB(void);
+
+void setupUSBEnable(void);
+
 void usbDsbBus(void);
 void usbAppInit(void); /* singleton usb initializer */
 
@@ -134,4 +139,4 @@ void USB_LP_CAN1_RX0_IRQHandler(void);
 
 void nothingProc(void);
 
-#endif
+#endif //USB_H
