@@ -1,4 +1,23 @@
-# STM32duino-bootloader
+# STM32duino-bootloader (野火指南者 STM32F103VE)
+
+> 本分支适配了野火的 stm32f103 开发板
+
+构建命令
+
+```bash
+make yehuo-znz
+
+# [shell output]
+# cp build/maple_boot.bin bootloader_only_binaries/yehuo_boot20_znz.bin
+
+```
+
+通过 stlink 或者 其他 swd 方式写入固件
+
+* 默认开启 fastboot , 需要强制进入 DFU 按住 k1 再 reset
+* 第二次 reset 默认进入 DFU, 再按一次 reset 恢复正常启动
+
+## origin readme
 
 Please Note: This code does not work with all STM32F103 Boards
 
