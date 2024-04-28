@@ -296,7 +296,7 @@
     #define BOOTLOADER_WAIT 0
 
     #define LED_BANK        GPIOB
-    #define LED_PIN         0
+    #define LED_PIN         5
     #define LED_ON_STATE    0
 
     #define FASTBOOT
@@ -305,7 +305,6 @@
     #define BUTTON_BANK GPIOA
     #define BUTTON_PIN 0
     #define BUTTON_PRESSED_STATE 1
-
 
     /* USB Disc Pin Setup.   USB DISC is PD6 */
     #define USB_DISC_BANK           GPIOD

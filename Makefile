@@ -338,7 +338,7 @@ copy_yehuo-znz:
 	@echo
 	@echo "Copying to binaries folder"
 	@echo
-	cp $(TARGET).bin bootloader_only_binaries/yehuo_boot20_znz.bin
+	cp $(TARGET).bin bootloader_only_binaries/yehuo_fastboot_znz.bin
 	@echo
 
 build_generic-pb0: TARGETFLAGS= -DTARGET_GENERIC_F103_PB0 $(DEFINES)
